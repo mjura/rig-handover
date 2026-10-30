@@ -1,8 +1,9 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
+closed: 2026-10-30
 ---
 
 # Morning digest
@@ -77,3 +78,18 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Issues
+
+| # | Issue | Blocked by | Worker | Closed |
+|---|-------|-----------|--------|--------|
+| 1 | Run log reader (commit src/digest/types.ts first) | — | claude-code · see commit trailer · low | 2026-10-30 |
+| 2 | Digest page: GET /digest/:night | #1 | claude-code · see commit trailer · low | 2026-10-30 |
+| 3 | Digest JSON: GET /api/digest/:night | #1 | claude-code · see commit trailer · low | 2026-10-30 |
+| 4 | Status board links each night to its digest | #1 | claude-code · see commit trailer · low | 2026-10-30 |
+| 5 | Route tests: 200, 404, empty night, bad line | #1 | claude-code · see commit trailer · low | 2026-10-30 |
+| 6 | Preview for review | #2, #3 | claude-code · see commit trailer · low | 2026-10-30 |
+| 7 | Clean up: re-upload the preview without the marker, move the plan to done | #6 | claude-code · see commit trailer · low | 2026-10-30 |
+
+#6 was closed twice before the reviewer had looked and reopened both times; it closed for good once
+the course reviewer had seen the preview. The marker came off the preview link the same morning.
