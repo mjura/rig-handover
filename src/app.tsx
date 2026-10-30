@@ -38,5 +38,13 @@ export function createApp(config: RigConfig = loadConfig()) {
     );
   });
 
+  // Same rows, same order as /digest/:night: both come from readNight (ADR 0001).
+  app.get('/api/digest/:night', (c) => {
+    const night = c.req.param('night');
+    const digest = readNight(config.runsDir, night);
+    if (!digest) return c.json({ error: 'no run log for this night', night }, 404);
+    return c.json(digest);
+  });
+
   return app;
 }
